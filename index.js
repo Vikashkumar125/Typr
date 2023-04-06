@@ -4,14 +4,15 @@ async function getData(){
     let minLength = 100;
     content = [];
     try{
-	const resp = await fetch("https://api.quotable.io/random?minLength="+minLength);
+	const resp = await fetch("https://random-word-api.vercel.app/api?words=20&length=5");
     	const data = await resp.json();
     	console.log(data);
-    	content = [data.content];
+    	content = [data.join(" ")];
+        console.log(content)
     }
     catch(err){
 	    console.log(err);
-	    content =  [["Cosmology deals with the world as the totality of space, time and all phenomena. Historically, it has had quite a broad scope, and in many cases was founded in religion. In modern use metaphysical cosmology addresses questions about the Universe which are beyond the scope of science."]];
+	    content =  ["Cosmology deals with the world as the totality of space, time and all phenomena. Historically, it has had quite a broad scope, and in many cases was founded in religion. In modern use metaphysical cosmology addresses questions about the Universe which are beyond the scope of science."];
     }
     finally{
     	console.log(content);
