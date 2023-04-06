@@ -179,7 +179,7 @@ function setNewContent(){
         wordsArray = wordsArray.filter((word)=> word.length>=1)
         //limiting to 25 words 
         let letterId = 0;
-        for(let wordIndex =0;wordIndex<25;wordIndex++){
+        for(let wordIndex =0;wordIndex<20;wordIndex++){
             let word = wordsArray[wordIndex];
             typingPara = typingPara+letterSeparator(word,letterId);
             letterId = letterId+word.length+1;
@@ -199,6 +199,7 @@ function wordSeparator(content){
 
 function letterSeparator(content,id){
     let wordSpan="";
+    console.log(typeof content)
     for(let charIndex=0;charIndex<content.length;charIndex++){
         wordSpan= wordSpan + `<div class="typing" id="${id}">${content.charAt(charIndex)}</div>`;
         id++;
