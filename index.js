@@ -38,7 +38,8 @@ let letters,typingLetterErrors=0;
 // let dataKeys = [];
 // for(let i = 0;i<keys.length;i++) {
 //     dataKeys.push(keys.item(i).attributes[1].value);
-// }
+// 
+//}
 
 //keydown event listener 
 document.addEventListener("keydown",keyPress);
